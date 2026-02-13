@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+  <h2 class="slideshow-title">Slideshow</h2>
+  <p class="intro-text">Automatic slideshow — please wait</p>
+
+  <div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 8</div>
+    <img src="images/one.jpg" alt="slide 1">
+    <div class="text">Happy Valentine’s, my love — always and forever. ❤️</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 8</div>
+    <img src="images/two.jpg" alt="slide 2">
+    <div class="text">Loving you is my favorite everyday feeling.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 8</div>
+    <img src="images/three.jpg" alt="slide 3">
+    <div class="text">First Valentine’s together, endless love ahead.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 8</div>
+    <img src="images/four.jpeg" alt="slide 4">
+    <div class="text">Love looks better with you in it.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 8</div>
+    <img src="images/five.jpeg" alt="slide 5">
+    <div class="text">My favorite place is right beside you</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 8</div>
+    <img src="images/six.jpeg" alt="slide 6">
+    <div class="text">You’re my always Valentine</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 8</div>
+    <img src="images/seve.jpeg" alt="slide 7">
+    <div class="text">Loving you never gets old.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 8</div>
+    <img src="images/eight.jpeg" alt="slide 8">
+    <div class="text">Just you, me, and all this love.</div>
+  </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center;margin-bottom:1rem">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <div style="display:flex;gap:.5rem;justify-content:center;align-items:center;margin-bottom:.75rem">
+    <a class="back-link" href="index.html" style="margin-right:.5rem">← Back</a>
+    <button id="revealToPoem" class="reveal-btn">Reveal Surprise: Poem</button>
+  </div>
+  
+  <script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    if(slides[slideIndex-1]) slides[slideIndex-1].style.display = "block";  
+    if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+  // reveal to poem
+  const revealBtn = document.getElementById('revealToPoem');
+  if(revealBtn) revealBtn.addEventListener('click', ()=>{ window.location.href = 'poem.html'; });
+  </script>
+  
+  <div class="audio-control" id="audioControl">
+    <button id="audioToggle" class="audio-btn">Play ♫</button>
+    <div class="audio-label" id="audioLabel">Music</div>
+    <audio id="bgAudio" src="music/MY.mp3" loop preload="auto" autoplay></audio>
+  </div>
+
+  <script src="audio.js"></script>
+
+</body>
+    </div>
+  </div>
+
+</body>
+</html>
