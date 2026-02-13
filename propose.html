@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Will you be my Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="propose.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <div class="heart-float" aria-hidden="true"></div>
+      <div class="question-wrap">
+        <h1 id="questionText"></h1><span class="cursor" id="cursor"></span>
+        <p class="sub">Choose wisely — one button will try to avoid being clicked.</p>
+      </div>
+      <div class="proposal-actions" id="actions">
+        <button id="yesBtn" class="proposal-btn btn-yes">Yes</button>
+        <button id="noBtn" class="proposal-btn btn-no">No</button>
+      </div>
+      <div id="noWidget" class="no-widget hidden">No is not an option, my love 💖</div>
+      <div style="margin-top:1rem;text-align:center">
+        <a class="back-link" href="poem.html">← Back to Poem</a>
+      </div>
+    </div>
+  </div>
+  <div class="audio-control" id="audioControl">
+    <button id="audioToggle" class="audio-btn">Play ♫</button>
+    <div class="audio-label" id="audioLabel">Music</div>
+    <audio id="bgAudio" src="music/MY.mp3" loop preload="auto"></audio>
+  </div>
+
+  <script src="audio.js"></script>
+
+<script>
+  (function(){
+    const yes = document.getElementById('yesBtn');
+    const no = document.getElementById('noBtn');
+    const actions = document.getElementById('actions');
+
+    // typewriter for the question
+    const question = "Will you be my Valentine's date forever?";
+    const qEl = document.getElementById('questionText');
+    const cursor = document.getElementById('cursor');
+    let pos = 0;
+    function typeChar(){
+      if(pos <= question.length){
+        qEl.textContent = question.slice(0,pos);
+        qEl.classList.add('typing');
+        pos++;
+        setTimeout(typeChar, 55);
+      } else {
+        cursor.style.opacity = 0;
+        document.querySelector('.card').classList.add('fade-in');
+      }
+    }
+    requestAnimationFrame(typeChar);
+
+    // move No button randomly after it's clicked; stop when Yes clicked
+    let moveInterval = null;
+    function moveNoRandomly(){
+      no.classList.add('floating');
+      const margin = 12;
+      const w = Math.max(0, window.innerWidth - no.offsetWidth - margin*2);
+      const h = Math.max(0, window.innerHeight - no.offsetHeight - margin*2);
+      const left = Math.floor(Math.random() * w) + margin;
+      const top = Math.floor(Math.random() * h) + margin;
+      no.style.left = left + 'px';
+      no.style.top = top + 'px';
+    }
+
+    no.addEventListener('click', (e)=>{
+      e.preventDefault();
+      // reveal widget
+      const widget = document.getElementById('noWidget');
+      if(widget){ widget.classList.remove('hidden'); setTimeout(()=>widget.classList.add('show'), 20); }
+      // ensure No is visible and start moving it periodically
+      no.classList.remove('hidden');
+      moveNoRandomly();
+      if(moveInterval) clearInterval(moveInterval);
+      moveInterval = setInterval(moveNoRandomly, 900);
+    });
+
+    yes.addEventListener('click', ()=>{
+      if(moveInterval) { clearInterval(moveInterval); moveInterval = null; }
+      const card = document.getElementById('card');
+      card.innerHTML = `\n        <h1 class="success-title">Congratulations!</h1>\n        <p class="success-text">I'll be your Valentine for the rest of your life. ❤️</p>\n        <div style="text-align:center;margin-top:1rem">\n          <a class=\"back-link\" href=\"index.html\">← Back to Home</a>\n        </div>`;
+    });
+  })();
+</script>
+
+</body>
+</html>
