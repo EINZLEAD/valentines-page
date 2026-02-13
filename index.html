@@ -9,13 +9,21 @@
 <body>
 	<div class="container">
 		<div class="card" id="card">
-			<h1 id="title">Happy Valentine's Day</h1>
+			<h1 id="title">Happy Valentine's Day, My Love</h1>
 			<p id="message">You make my heart smile.</p>
 			<button id="revealBtn">Reveal Surprise</button>
 			<div class="heart" id="heart" aria-hidden="true"></div>
 		</div>
 	</div>
 	<canvas id="confetti"></canvas>
+
+	<div class="audio-control" id="audioControl">
+	  <button id="audioToggle" class="audio-btn">Play ♫</button>
+	  <div class="audio-label" id="audioLabel">Music</div>
+	  <audio id="bgAudio" src="music/MY.mp3" loop preload="auto" autoplay></audio>
+	</div>
+
+	<script src="audio.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
