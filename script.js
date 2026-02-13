@@ -10,14 +10,14 @@
   btn.addEventListener('click', ()=>{
     if(step === 0){
       title.textContent = "To My Favorite Person";
-      message.textContent = "Every moment with you is my favorite. Happy Valentine's Day! ❤️";
+      message.textContent = "hello my love love! happy 1st valinetines to us, today is the day of love and i want to make you feel special and treasured. I love you to heaven and back and i will continue to do so until the day i die. i love you so much my love. always and forever. Every moment with you is my favorite. Happy Valentine's Day! ❤️";
       heart.classList.add('beat');
       launchConfetti();
       setTimeout(()=>heart.classList.remove('beat'), 2400);
       step = 1;
     } else if(step === 1){
-      // go to gallery
-      window.location.href = 'gallery.html';
+      // go to carousel
+      window.location.href = 'carousel.html';
     } else if(step === 2){
       // go to poem
       window.location.href = 'poem.html';
