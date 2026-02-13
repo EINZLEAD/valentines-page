@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - Valentine's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Gallery</h1>
+      <p>Swipe or use arrows to browse.</p>
+      <div class="carousel" id="carousel">
+        <button class="carousel-btn prev" id="prev">❮</button>
+        <div class="carousel-track" id="track">
+          <img src="images/one.jpg" alt="Pic 1">
+          <img src="images/five.jpg" alt="Pic 2">
+          <img src="images/four.jpg" alt="Pic 3">
+          <img src="images/seven.jpg" alt="Pic 4">
+          <img src="images/three.jpg" alt="Pic 5">
+          <img src="images/two.jpg" alt="Pic 6">
+        </div>
+        <button class="carousel-btn next" id="next">❯</button>
+      </div>
+      <div style="margin-top:1rem;">
+        <button id="revealToPoem" class="reveal-btn">Reveal Surprise: Poem</button>
+      </div>
+      <a class="back-link" href="index.html">← Back</a>
+    </div>
+  </div>
+  <script src="gallery.js"></script>
+</body>
+</html>

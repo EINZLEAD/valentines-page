@@ -5,13 +5,23 @@
   const heart = document.getElementById('heart');
   const confettiCanvas = document.getElementById('confetti');
   let confettiActive = false;
-
+  // click sequence: 0 = reveal message, 1 = gallery, 2 = poem
+  let step = 0;
   btn.addEventListener('click', ()=>{
-    title.textContent = "To My Favorite Person";
-    message.textContent = "Every moment with you is my favorite. Happy Valentine's Day! ❤️";
-    heart.classList.add('beat');
-    launchConfetti();
-    setTimeout(()=>heart.classList.remove('beat'), 2400);
+    if(step === 0){
+      title.textContent = "To My Favorite Person";
+      message.textContent = "Every moment with you is my favorite. Happy Valentine's Day! ❤️";
+      heart.classList.add('beat');
+      launchConfetti();
+      setTimeout(()=>heart.classList.remove('beat'), 2400);
+      step = 1;
+    } else if(step === 1){
+      // go to gallery
+      window.location.href = 'gallery.html';
+    } else if(step === 2){
+      // go to poem
+      window.location.href = 'poem.html';
+    }
   });
 
   // Simple confetti implementation
