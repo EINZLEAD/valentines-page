@@ -1,0 +1,79 @@
+/* Styles specific to the slideshow page */
+.slideshow-container { position: relative; margin: 0 auto; max-width:100%; }
+.mySlides { display: none; }
+img { vertical-align: middle; width:100%; display:block }
+
+.text { color: #222; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center; background: rgba(255,255,255,0.6); }
+.numbertext { color: #333; font-size: 12px; padding: 8px 12px; position: absolute; top: 0; }
+
+.dot { height: 12px; width: 12px; margin: 0 4px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; cursor:pointer }
+.active { background-color: #717171; }
+
+.fade { animation-name: fade; animation-duration: 1s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+/* Card override specifically for this slideshow page */
+.card { max-width:900px; width:100%; padding:1.25rem; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.12); background:rgba(255,255,255,0.95); margin:0 auto }
+
+/* Reveal button styling */
+.reveal-btn{
+  background: linear-gradient(90deg,#d62e7f 0%,#ff6aa6 100%);
+  color:#fff;border:none;padding:.6rem 1rem;border-radius:12px;font-weight:700;cursor:pointer;
+  box-shadow:0 8px 18px rgba(214,46,127,0.16);transition:transform .12s ease,box-shadow .12s ease;
+}
+.reveal-btn:active{transform:translateY(1px)}
+.reveal-btn:hover{box-shadow:0 10px 24px rgba(214,46,127,0.22)}
+
+@media only screen and (max-width:420px){
+  .text{font-size:12px}
+  .card{padding:.9rem}
+  .slideshow-title{font-size:1.25rem}
+  .intro-text{font-size:.95rem}
+  .numbertext{font-size:11px;padding:5px 8px}
+  .dot{height:16px;width:16px;margin:0 8px}
+}
+
+/* Back link styled as a button */
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:.5rem .9rem;
+  color:#6b3467;
+  background:rgba(255,255,255,0.98);
+  border:1px solid rgba(107,52,103,0.08);
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:background .12s ease,transform .12s ease,box-shadow .12s ease;
+}
+.back-link:hover{ background:rgba(214,46,127,0.06); transform:translateY(-2px); box-shadow:0 8px 20px rgba(214,46,127,0.08); }
+.back-link:active{ transform:translateY(0); }
+.back-link:focus{ outline:3px solid rgba(214,46,127,0.12); outline-offset:2px }
+
+/* Title and intro */
+.slideshow-title{
+  margin:0 0 .35rem 0;
+  font-size:1.6rem;
+  color:#c7286f;
+  letter-spacing:0.2px;
+  font-weight:800;
+}
+.intro-text{
+  margin:0 0 1rem 0;
+  color:#4a4a4a;
+  font-size:1rem;
+  opacity:0.95;
+}
+
+/* Caption and number styling tweaks */
+.text{font-style:italic;padding:10px 14px;border-radius:8px;max-width:calc(100% - 24px);margin:auto;font-size:1rem}
+.numbertext{background:rgba(255,255,255,0.95);padding:6px 10px;border-bottom-right-radius:8px;color:#333}
+
+/* Keep images centered and constrained on small screens */
+.slideshow-container img{ display:block; width:100%; height:auto; max-height:60vh; object-fit:cover }
+
+/* dots spacing for better touch targets */
+.dot{height:14px;width:14px;margin:0 6px}
+
+
