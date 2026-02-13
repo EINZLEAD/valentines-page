@@ -35,6 +35,22 @@ button:active{transform:translateY(1px)}
   h1{font-size:1.6rem}
 }
 
+/* Reveal button (global) */
+.reveal-btn{
+  background: linear-gradient(90deg,#d62e7f 0%,#ff6aa6 100%);
+  color:#fff;border:none;padding:.6rem 1rem;border-radius:12px;font-weight:700;cursor:pointer;
+  box-shadow:0 8px 18px rgba(214,46,127,0.12);transition:transform .12s ease,box-shadow .12s ease;
+}
+.reveal-btn:active{transform:translateY(1px)}
+.reveal-btn:hover{box-shadow:0 10px 24px rgba(214,46,127,0.18)}
+
+/* Proposal page buttons */
+.proposal-actions{display:flex;gap:1rem;justify-content:center;align-items:center;margin-top:1rem}
+.proposal-btn{padding:.6rem 1.1rem;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+.btn-yes{background:linear-gradient(90deg,#3ccf8e,#06d6a0);color:#fff}
+.btn-no{background:linear-gradient(90deg,#ffd166,#ff9a9e);color:#6b2d5a}
+
+
 /* Modal for multiple reveal options */
 .modal{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);z-index:60}
 .modal.hidden{display:none}
@@ -57,3 +73,9 @@ button:active{transform:translateY(1px)}
   .carousel-btn{padding:.5rem}
   .card{padding:2rem}
 }
+
+/* Audio control */
+.audio-control{position:fixed;left:16px;bottom:16px;z-index:1200;display:flex;align-items:center;gap:.5rem}
+.audio-btn{background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.06);padding:.5rem .6rem;border-radius:12px;cursor:pointer;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.audio-btn.playing{background:linear-gradient(90deg,#32d78a,#06d6a0);color:#fff;border:none}
+.audio-label{font-size:.9rem;color:#333}
