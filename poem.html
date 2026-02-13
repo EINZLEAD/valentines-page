@@ -10,9 +10,38 @@
   <div class="container">
     <div class="card">
       <h1>A Little Poem</h1>
-      <p class="poem">Roses in the morning light,<br> Your smile turns the dark to bright.<br> In every breath, in every day,<br> My heart finds home in you — always.</p>
-      <a class="back-link" href="index.html">← Back</a>
+      <p class="poem">
+
+      <br>My Valentine<br>
+      You make each day feel warmer somehow,
+      With every smile, every laugh we allow.
+      Whether you’re near or far from me,
+      Your love is where my heart will be.
+
+      You turn simple moments into something bright,
+      Fill my world with joy and light.
+      Today, tomorrow, always true.
+      My Valentine will always be you. ❤️
+      .</p>
+      <div style="display:flex;gap:.5rem;justify-content:center;align-items:center;flex-direction:column">
+        <button id="revealToPropose" class="reveal-btn" style="margin-bottom:.6rem">Reveal Surprise</button>
+        <a class="back-link" href="index.html">← Back</a>
+      </div>
+      <script>
+        const revealToPropose = document.getElementById('revealToPropose');
+        if(revealToPropose) revealToPropose.addEventListener('click', ()=>{ window.location.href = 'propose.html'; });
+      </script>
     </div>
   </div>
+</div>
+
+  <div class="audio-control" id="audioControl">
+    <button id="audioToggle" class="audio-btn">Play ♫</button>
+    <div class="audio-label" id="audioLabel">Music</div>
+    <audio id="bgAudio" src="music/My.mp3" loop preload="auto"></audio>
+  </div>
+
+  <script src="audio.js"></script>
+
 </body>
 </html>
